@@ -1,6 +1,6 @@
 # IO Scheduler
 ## Introduction
-
+	In this project, we developed a new IO scheduler, named COOP, which is a cooperative IO scheduler considering both of request time and process priority. 
 ## Running Environment
 	* Linux Kernel v4.12
 ## Design
@@ -22,14 +22,12 @@
 ![alt text](https://github.com/RandallDW/IO_Scheduler/blob/master/images/add_request.png "add request block diagram")
 ### Dispatch 
 ![alt text](https://github.com/RandallDW/IO_Scheduler/blob/master/images/dispatch.png "dispatch block diagram")
-
-
 	
 ## Execute Program
 	* $ make 
 	* $ sudo insmod coop.ko
 	* $ sudo echo coop > /sys/block/sda/queue/scheduler
-### Checking current io_scheduler
+### Check current io_scheduler
 	* $ cat /sys/block/sda/queue/scheduler
-### Changing current io_scheduler
+### Change current io_scheduler
 	* $ echo <new io_scheduler name> > /sys/block/sda/queue/scheduler
